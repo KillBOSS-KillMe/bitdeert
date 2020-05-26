@@ -119,6 +119,30 @@
           </li>
         </ul>
       </div>
+      <div class="listModel">
+        <ul class="titleModel">
+          <li class="active">
+            返佣记录
+            <i class="el-tooltip el-icon-info"></i>
+          </li>
+          <li>
+            借款记录
+            <i class="el-tooltip el-icon-info"></i>
+          </li>
+        </ul>
+        <el-table :data="tableData3" height="550" border style="width: 100%">
+          <el-table-column prop="date" label="下单日期" width="180"></el-table-column>
+          <el-table-column prop="name" label="订单ID" width="180"></el-table-column>
+          <el-table-column prop="address" label="商品名称"></el-table-column>
+          <el-table-column prop="address" label="订单总金额"></el-table-column>
+          <el-table-column prop="address" label="全部"></el-table-column>
+        </el-table>
+        <div class="notList">
+          <i class="el-icon-info"></i>
+          <span>暂无数据...</span>
+        </div>
+        <el-pagination background layout="prev, pager, next" :total="1000"></el-pagination>
+      </div>
     </div>
   </div>
 </template>
@@ -126,7 +150,45 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      tableData3: [
+        {
+          date: "2016-05-03",
+          name: "王小虎",
+          address: "上海市普陀区金沙江路 1518 弄"
+        },
+        {
+          date: "2016-05-02",
+          name: "王小虎",
+          address: "上海市普陀区金沙江路 1518 弄"
+        },
+        {
+          date: "2016-05-04",
+          name: "王小虎",
+          address: "上海市普陀区金沙江路 1518 弄"
+        },
+        {
+          date: "2016-05-01",
+          name: "王小虎",
+          address: "上海市普陀区金沙江路 1518 弄"
+        },
+        {
+          date: "2016-05-08",
+          name: "王小虎",
+          address: "上海市普陀区金沙江路 1518 弄"
+        },
+        {
+          date: "2016-05-06",
+          name: "王小虎",
+          address: "上海市普陀区金沙江路 1518 弄"
+        },
+        {
+          date: "2016-05-07",
+          name: "王小虎",
+          address: "上海市普陀区金沙江路 1518 弄"
+        }
+      ]
+    };
   },
   methods: {
     handleOpen(key, keyPath) {
@@ -328,10 +390,63 @@ export default {
         padding-left: 50px;
       }
       .address-label {
-            margin-right: 20px;
-                font-size: 16px;
-    color: #666;
+        margin-right: 20px;
+        font-size: 16px;
+        color: #666;
       }
+    }
+  }
+  .listModel {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.1);
+    .titleModel {
+      width: 100%;
+      height: auto;
+      padding: 20px 20px 0;
+      font-size: 20px;
+      color: #1c1f28;
+      border-bottom: 1px solid #d8d8d8;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      .active {
+        border-bottom: 3px solid #5c82ff;
+      }
+      li {
+        margin-right: 48px;
+        padding-bottom: 20px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        border-bottom: 3px solid #fff;
+        i {
+          margin-left: 10px;
+          color: #999;
+        }
+      }
+    }
+    .notList {
+      width: 100%;
+      height: auto;
+      padding: 80px 0;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-direction: column;
+      color: #ddd;
+      i {
+        font-size: 80px;
+        margin-bottom: 20px;
+      }
+    }
+    .el-pagination {
+      text-align: center;
+      background-color: #fff;
+      padding: 30px 0;
     }
   }
 }
