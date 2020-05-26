@@ -8,19 +8,19 @@
           @open="handleOpen"
           @close="handleClose"
         >
-          <el-menu-item index="1">
+          <el-menu-item index="1" @click="goPage(1, 'ability')">
             <i class="el-icon-menu"></i>
             <span slot="title">我的算力</span>
           </el-menu-item>
-          <el-menu-item index="2">
+          <el-menu-item index="2" @click="goPage(1, 'orderList')">
             <i class="el-icon-menu"></i>
             <span slot="title">我的订单</span>
           </el-menu-item>
-          <el-menu-item index="3">
+          <el-menu-item index="3" @click="goPage(1, 'myCoupon')">
             <i class="el-icon-menu"></i>
             <span slot="title">我的礼券</span>
           </el-menu-item>
-          <el-menu-item index="4">
+          <el-menu-item index="4" @click="goPage(1, 'promote')">
             <i class="el-icon-menu"></i>
             <span slot="title">推广</span>
           </el-menu-item>
@@ -30,9 +30,9 @@
               <span>设置</span>
             </template>
             <el-menu-item-group>
-              <el-menu-item index="5-1">收益地址</el-menu-item>
-              <el-menu-item index="5-2">提醒设置</el-menu-item>
-              <el-menu-item index="5-3">账号设置</el-menu-item>
+              <el-menu-item index="5-1" @click="goPage(1, 'incomeAddress')">收益地址</el-menu-item>
+              <el-menu-item index="5-2" @click="goPage(1, 'reminderSettings')">提醒设置</el-menu-item>
+              <el-menu-item index="5-3" @click="goPage(1, 'ability')">账号设置</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
         </el-menu>
@@ -43,9 +43,12 @@
 </template>
 
 <script>
+import { getSaleCoin } from "@/api/nav.js";
 export default {
   data() {
     return {};
+  },
+  watch: {
   },
   methods: {
     handleOpen(key, keyPath) {
@@ -53,6 +56,10 @@ export default {
     },
     handleClose(key, keyPath) {
       console.log(key, keyPath);
+    },
+    goPage(index, path) {
+      this.indexnav = index;
+      this.$router.push(path);
     }
   }
 };

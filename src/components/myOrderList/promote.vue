@@ -190,7 +190,29 @@ export default {
       ]
     };
   },
+  mounted() {
+    console.log("--------------------");
+    // console.log(this.$store.state.pageDomNode);
+    console.log("--------------------");
+    // 显示默认组件列表
+    // this.templateTypeSel();
+  },
   methods: {
+    getData() {
+      axios.get("http://jsonplaceholder.typicode.com/posts").then(
+        data => {
+          return data.data;
+        }) //这里用到的箭头函数，至于具体的箭头函数如何，可以自行BB，至少能少写function......
+        .then(data => {
+          var blogsArray = [];
+          for (let key in data) {
+            data[key].id = key;
+            blogsArray.push(data[key]);
+          }
+          this.blogs = blogsArray;
+          console.log(this.blogs); //这个只是测试数据是否成功输出，在chrome里就能查看数据是否正常读取
+        });
+    },
     handleOpen(key, keyPath) {
       console.log(key, keyPath);
     },

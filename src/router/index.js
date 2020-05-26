@@ -85,19 +85,19 @@ const routes = [
             name: "IncomeAddress",
             path: "/incomeAddress",
             component: () => import("@/components/myOrderList/IncomeAddress"),
-            meta: { title: "我的礼券" }
+            meta: { title: "收益地址" }
           },
           {
             name: "ReminderSettings",
             path: "/reminderSettings",
             component: () => import("@/components/myOrderList/reminderSettings"),
-            meta: { title: "我的礼券" }
+            meta: { title: "提醒设置" }
           },
           {
             name: "Promote",
             path: "/promote",
             component: () => import("@/components/myOrderList/promote"),
-            meta: { title: "我的礼券" }
+            meta: { title: "推广" }
           },
         ]
       }
