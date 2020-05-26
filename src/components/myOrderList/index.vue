@@ -32,7 +32,7 @@
             <el-menu-item-group>
               <el-menu-item index="5-1" @click="goPage(1, 'incomeAddress')">收益地址</el-menu-item>
               <el-menu-item index="5-2" @click="goPage(1, 'reminderSettings')">提醒设置</el-menu-item>
-              <el-menu-item index="5-3" @click="goPage(1, 'ability')">账号设置</el-menu-item>
+              <el-menu-item index="5-3" @click="goPage(1, 'accountCenter')">账号设置</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
         </el-menu>

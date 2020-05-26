@@ -106,13 +106,13 @@ const routes = [
         name: "accountCenter",
         component: () => import("@/components/accountCenter/index"),
         meta: { title: "账号中心", auth: true },
-        redirect: "/homePage",
+        redirect: "/accountCenterSys",
         children: [
           {
             name: "AccountCenterSys",
             path: "/accountCenterSys",
             component: () => import("@/components/accountCenter/accountCenterSys"),
-            meta: { title: "首页" }
+            meta: { title: "账号设置" }
           }
         ]
       }
