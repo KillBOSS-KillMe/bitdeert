@@ -100,6 +100,21 @@ const routes = [
             meta: { title: "推广" }
           },
         ]
+      },
+      {
+        path: "/AccountCenter",
+        name: "accountCenter",
+        component: () => import("@/components/accountCenter/index"),
+        meta: { title: "账号中心", auth: true },
+        redirect: "/homePage",
+        children: [
+          {
+            name: "AccountCenterSys",
+            path: "/accountCenterSys",
+            component: () => import("@/components/accountCenter/accountCenterSys"),
+            meta: { title: "首页" }
+          }
+        ]
       }
     ]
   },
