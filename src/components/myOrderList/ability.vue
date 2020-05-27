@@ -73,6 +73,7 @@
 </template>
 
 <script>
+import { getUserHashRate } from "@/api/myOrderList";
 export default {
   data() {
     return {
@@ -115,12 +116,24 @@ export default {
       ]
     };
   },
+  mounted() {
+    // 显示默认组件列表
+    this.getUserHashRate();
+  },
   methods: {
     handleOpen(key, keyPath) {
       console.log(key, keyPath);
     },
     handleClose(key, keyPath) {
       console.log(key, keyPath);
+    },
+    getUserHashRate() {
+      getUserHashRate({ user_uuid: 'b1889ad2d1db416dada6f1a621258a8b'}).then(res => {
+        console.log("*******************123123123**************", res);
+        if (res.data.code == 200) {
+          this.pageDataNode = res.data.data
+        }
+      });
     }
   }
 };
@@ -327,12 +340,12 @@ export default {
       color: #999;
     }
     div {
-    color: #5c82ff;
-    border: 1px solid #5c82ff;
-    font-size: 14px;
-    border-radius: 4px;
-    padding: 10px;
-    margin: 15px 0;
+      color: #5c82ff;
+      border: 1px solid #5c82ff;
+      font-size: 14px;
+      border-radius: 4px;
+      padding: 10px;
+      margin: 15px 0;
     }
   }
 }

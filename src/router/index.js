@@ -60,7 +60,7 @@ const routes = [
         path: "/myOrderList",
         name: "myOrderList",
         component: () => import("@/components/myOrderList/index"),
-        redirect: "/Promote",
+        redirect: "/ability",
         meta: { title: "我的算力", auth: true },
         children: [
           {
