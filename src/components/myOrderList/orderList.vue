@@ -23,6 +23,7 @@
 </template>
 
 <script>
+import { getUserOrder } from "@/api/myOrderList";
 export default {
   data() {
     return {
@@ -65,12 +66,19 @@ export default {
       ]
     };
   },
+  mounted() {
+    // 加载算力信息
+    this.getUserOrder();
+  },
   methods: {
-    handleOpen(key, keyPath) {
-      console.log(key, keyPath);
-    },
-    handleClose(key, keyPath) {
-      console.log(key, keyPath);
+    // 加载算力信息
+    getUserOrder() {
+      getUserOrder({ user_uuid: 'b1889ad2d1db416dada6f1a621258a8b'}).then(res => {
+        console.log("*******************123123123**************", res);
+        if (res.data.code == 200) {
+          this.pageDataNode = res.data.data
+        }
+      });
     }
   }
 };
