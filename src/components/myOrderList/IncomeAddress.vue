@@ -1,16 +1,9 @@
 <template>
   <div class="abilityPage">
-    <div class="head">
-      <div class="headTitle active">BTC</div>
-      <div class="headTitle">BCH</div>
-      <div class="headTitle">LTC</div>
-      <div class="headTitle">ETH</div>
-      <div class="headTitle">DCR</div>
-      <div class="headTitle">ZEC</div>
-      <div class="headTitle">DASH</div>
-      <div class="headTitle">ETC</div>
-      <div class="headTitle">CKB</div>
-    </div>
+    <ul class="head">
+      <li v-for="(item,index) of titleList" :key="index" :class="{active: thisTitleIndex === index}" @click="selList(index)">{{item}}</li>
+    </ul>
+
     <div class="listCon">
       <div class="listShow">
         CKB 币种已支持的矿池：AntPool
@@ -39,6 +32,8 @@
 export default {
   data() {
     return {
+      titleList: ['BTC', 'BCH', 'LTC', 'ETH', 'DCR', 'ZEC', 'DASH', 'ETC', 'CKB'],
+      thisTitleIndex: 0,
       tableData3: [
         {
           date: "2016-05-03",
@@ -79,6 +74,9 @@ export default {
     };
   },
   methods: {
+    selList(index) {
+      this.thisTitleIndex = index
+    },
     handleOpen(key, keyPath) {
       console.log(key, keyPath);
     },
@@ -93,7 +91,6 @@ export default {
   width: 1250px;
   height: auto;
   padding: 10px;
-  border: 1px solid #333;
   .head {
     width: 100%;
     height: 60px;
@@ -103,14 +100,15 @@ export default {
     justify-content: flex-start;
     background-color: #fafafa;
     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
-    .headTitle:hover {
+    li:hover {
       height: 58px;
       border-bottom: 3px solid #5c82ff;
       box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
     }
-    .headTitle {
+    li {
       width: auto;
       height: 60px;
+      cursor: pointer;
       padding: 0 20px;
       display: flex;
       align-items: center;
@@ -153,6 +151,7 @@ export default {
     div {
       width: 165px;
       height: 40px;
+      cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;

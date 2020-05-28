@@ -71,6 +71,7 @@ export default {
       div {
         width: 115px;
         height: 38px;
+        cursor: pointer;
         border-radius: 5px;
         color: #fff;
         background-color: #5c82ff;

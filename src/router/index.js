@@ -70,6 +70,12 @@ const routes = [
             meta: { title: "我的算力" }
           },
           {
+            name: "AbilityAllList",
+            path: "/abilityAllList",
+            component: () => import("@/components/myOrderList/abilityAllList"),
+            meta: { title: "我的算力" }
+          },
+          {
             name: "OrderList",
             path: "/orderList",
             component: () => import("@/components/myOrderList/orderList"),

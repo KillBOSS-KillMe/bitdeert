@@ -35,7 +35,7 @@
               0000
               <span>TH/s</span>
             </div>
-            <span class="more">更多产出数据></span>
+            <span class="more" @click="goAllList">更多产出数据></span>
           </div>
           <div class="price">≈ $0.00</div>
         </div>
@@ -129,6 +129,10 @@ export default {
           this.pageDataNode = res.data.data
         }
       });
+    },
+    // 进入所有列表页
+    goAllList() {
+      this.$router.push('abilityAllList');
     }
   }
 };
@@ -138,8 +142,6 @@ export default {
   width: 1250px;
   height: auto;
   padding: 10px;
-  border: 1px solid #333;
-
   .head {
     width: 100%;
     height: 60px;
@@ -247,6 +249,7 @@ export default {
           .more {
             font-size: 14px;
             color: #5c82ff;
+            cursor: pointer;
           }
         }
         .price {
@@ -260,6 +263,7 @@ export default {
       .botton {
         width: 80px;
         height: 34px;
+        cursor: pointer;
         color: #5c82ff;
         border: 1px solid #5c82ff;
         text-align: center;
@@ -336,6 +340,7 @@ export default {
     }
     div {
       color: #5c82ff;
+      cursor: pointer;
       border: 1px solid #5c82ff;
       font-size: 14px;
       border-radius: 4px;

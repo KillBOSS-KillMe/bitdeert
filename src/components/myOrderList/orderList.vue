@@ -1,7 +1,7 @@
 <template>
   <div class="abilityPage">
     <ul class="head">
-      <li v-for="(item,index) of titleList" :key="index" :class="{active: thisTitleIndex === index}" @click="thisTitleIndex = index">{{item}}</li>
+      <li v-for="(item,index) of titleList" :key="index" :class="{active: thisTitleIndex === index}" @click="selList(index)">{{item}}</li>
     </ul>
     <div class="listCon">
       <el-table :data="tableData3" height="550" border style="width: 100%">
@@ -93,7 +93,6 @@ export default {
   width: 1250px;
   height: auto;
   padding: 10px;
-  border: 1px solid #333;
   .head {
     width: 100%;
     height: 60px;
@@ -111,6 +110,7 @@ export default {
     li {
       width: auto;
       height: 60px;
+      cursor: pointer;
       padding: 0 20px;
       display: flex;
       align-items: center;

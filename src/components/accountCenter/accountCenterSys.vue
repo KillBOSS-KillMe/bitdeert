@@ -158,6 +158,7 @@ export default {
         align-items: center;
         justify-content: center;
         width: 100px;
+        cursor: pointer;
         padding: 9px 15px;
         font-size: 12px;
         border-radius: 3px;

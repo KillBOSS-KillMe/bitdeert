@@ -8,15 +8,15 @@
           <div class="info">
             <div>绑定邮箱即可获得新人礼</div>
             <span>去绑定</span>
-           
           </div>
         </div>
       </li>
     </ul>
-    <div class="head">
-      <div class="headTitle active">可用卡券<span>(0)</span></div>
-      <div class="headTitle">已用&失效<span>(0)</span></div>
-    </div>
+    <ul class="head">
+      <li v-for="(item,index) of titleList" :key="index" :class="{active: thisTitleIndex === index}" @click="selList(index)">
+        {{item.name}}<span>({{item.num}})</span>
+      </li>
+    </ul>
     <div class="listCon">
       <el-table :data="tableData3" height="550" border style="width: 100%">
         <el-table-column prop="date" label="下单日期" width="180"></el-table-column>
@@ -29,7 +29,7 @@
         <i class="el-icon-info"></i>
         <span>暂无数据...</span>
       </div>
-      <el-pagination background layout="prev, pager, next" :total="1000"></el-pagination>
+      <el-pagination background layout="prev, pager, next" :total="100"></el-pagination>
     </div>
   </div>
 </template>
@@ -38,6 +38,11 @@
 export default {
   data() {
     return {
+      titleList: [
+        {name: '可用卡券', num: 0},
+        {name: '已用&失效', num: 0}
+      ],
+      thisTitleIndex: 0,
       tableData3: [
         {
           date: "2016-05-03",
@@ -78,6 +83,11 @@ export default {
     };
   },
   methods: {
+    selList(index) {
+      this.thisTitleIndex = index
+      // 加载列表
+      // this.getUserOrder()
+    },
     handleOpen(key, keyPath) {
       console.log(key, keyPath);
     },
@@ -92,7 +102,6 @@ export default {
   width: 1250px;
   height: auto;
   padding: 10px;
-  border: 1px solid #333;
   .couponList {
     width: 100%;
     height: auto;
@@ -145,6 +154,7 @@ export default {
             padding: 5px 10px;
             background-color: #fafafa;
             color: #fe8b0f;
+            cursor: pointer;
           }
         }
       }
@@ -154,19 +164,21 @@ export default {
     width: 100%;
     height: 60px;
     margin-bottom: 10px;
+    margin-top: 20px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     background-color: #fafafa;
     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
-    .headTitle:hover {
+    li:hover {
       height: 58px;
       border-bottom: 3px solid #5c82ff;
       box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
     }
-    .headTitle {
+    li {
       width: auto;
       height: 60px;
+      cursor: pointer;
       padding: 0 20px;
       display: flex;
       align-items: center;
