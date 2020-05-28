@@ -1,10 +1,8 @@
 <template>
   <div class="abilityPage">
-    <div class="head">
-      <div class="headTitle active">算力套餐订单</div>
-      <div class="headTitle">电费订单</div>
-      <div class="headTitle">合并支付电费单</div>
-    </div>
+    <ul class="head">
+      <li v-for="(item,index) of titleList" :key="index" :class="{active: thisTitleIndex === index}" @click="thisTitleIndex = index">{{item}}</li>
+    </ul>
     <div class="listCon">
       <el-table :data="tableData3" height="550" border style="width: 100%">
         <el-table-column prop="date" label="下单日期" width="180"></el-table-column>
@@ -27,6 +25,8 @@ import { getUserOrder } from "@/api/myOrderList";
 export default {
   data() {
     return {
+      titleList: ['算力套餐订单', '电费订单', '合并支付电费单'],
+      thisTitleIndex: 0,
       tableData3: [
         {
           date: "2016-05-03",
@@ -71,6 +71,11 @@ export default {
     this.getUserOrder();
   },
   methods: {
+    selList(index) {
+      this.thisTitleIndex = index
+      // 加载列表
+      this.getUserOrder()
+    },
     // 加载算力信息
     getUserOrder() {
       getUserOrder({ user_uuid: 'b1889ad2d1db416dada6f1a621258a8b'}).then(res => {
@@ -98,12 +103,12 @@ export default {
     justify-content: flex-start;
     background-color: #fafafa;
     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
-    .headTitle:hover {
+    li:hover {
       height: 58px;
       border-bottom: 3px solid #5c82ff;
       box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
     }
-    .headTitle {
+    li {
       width: auto;
       height: 60px;
       padding: 0 20px;
