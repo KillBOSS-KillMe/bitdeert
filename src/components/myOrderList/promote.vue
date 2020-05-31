@@ -112,7 +112,7 @@
         <ul class="address-box">
           <li class="row">
             <label class="address-label">提币地址</label>
-            <button type="button" class="el-button el-button--primary el-button--small is-plain">
+            <button type="button" class="el-button el-button--primary el-button--small is-plain" @click="newAddress = true">
               <i class="el-icon-plus"></i>
               <span>添加</span>
             </button>
@@ -144,6 +144,17 @@
         <el-pagination background layout="prev, pager, next" :total="1000"></el-pagination>
       </div>
     </div>
+    <el-dialog
+      title="提币地址"
+      :visible.sync="newAddress"
+      width="30%"
+      :before-close="newAddress = false">
+      <el-input v-model="input" placeholder="请输入内容"></el-input>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="newAddress = false">取 消</el-button>
+        <el-button type="primary" @click="newAddress = false">确 定</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 
@@ -151,6 +162,7 @@
 export default {
   data() {
     return {
+      newAddress: false,
       tableData3: [
         {
           date: "2016-05-03",
@@ -234,7 +246,7 @@ export default {
   }
   .lvList {
     width: 100%;
-    margin-top: 20px;
+    margin: 20px 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
