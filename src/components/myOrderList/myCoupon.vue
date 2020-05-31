@@ -7,7 +7,7 @@
           <img src="@/assets/img/ffed004.jpg" alt="">
           <div class="info">
             <div>绑定邮箱即可获得新人礼</div>
-            <span>去绑定</span>
+            <span @click="goPage('accountCenter')">去绑定</span>
           </div>
         </div>
       </li>
@@ -83,6 +83,9 @@ export default {
     };
   },
   methods: {
+    goPage(path) {
+      this.$router.push(path);
+    },
     selList(index) {
       this.thisTitleIndex = index
       // 加载列表
