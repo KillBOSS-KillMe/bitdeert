@@ -6,16 +6,24 @@ const service = axios.create({
   withCredentials: true,
   timeout: 5000
 });
-// service.interceptors.request.use(
-//   config => {
-//     console.log(store.getters.token);
-//     return config;
-//   },
-//   error => {
-//     console.log(error);
-//     return Promise.reject(error);
-//   }
-// );
+service.interceptors.request.use(
+  config => {
+
+    const token = store.state.token;
+    console.log(this.$store.state.token)
+    console.log('1111111')
+    console.log(store.getters.token);
+    if (token) {
+      config.headers.Authorization = token;
+    }
+    // console.log(store.getters.token);
+    return config;
+  },
+  error => {
+    console.log(error);
+    return Promise.reject(error);
+  }
+);
 
 // 响应拦截器
 service.interceptors.response.use(

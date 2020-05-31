@@ -100,6 +100,7 @@
 <script>
 import dragVerify from "@/components/drag/dragVerify";
 import { login, getCode } from "@/api/login";
+import { connect } from 'tls';
 // import { Message } from "element-ui";
 export default {
   components: { dragVerify },
@@ -228,6 +229,10 @@ export default {
           login({ phoneNum: phoneNum, code: code, type: 0 }).then(res => {
             console.log("登录成功", res);
             if (res.data.code == 200) {
+              this.$store.state.token = res.data.data
+              console.log('========================================')
+              console.log(this.$store.state.token)
+              // sessionStorage.setItem('token', res.data.data);
               this.$router.push({ path: "/" });
             }
           });
