@@ -20,7 +20,7 @@
               <span>TH/s</span>
             </div>
           </div>
-          <div class="botton">矿池分配</div>
+          <div class="botton" @click="allocation = true">矿池分配</div>
         </div>
       </div>
       <div class="allOutput">
@@ -69,6 +69,32 @@
         <div>购买框架共享套餐</div>
       </div>
     </div>
+    
+    <el-dialog
+      title="矿池分配"
+      :visible.sync="allocation"
+      width="30%"
+      :before-close="handleClose">
+      <div class="listCon">
+        <el-table :data="tableData3" height="550" border style="width: 100%">
+          <el-table-column prop="date" label="相应订单号" width="180"></el-table-column>
+          <el-table-column prop="name" label="算力信息" width="180"></el-table-column>
+          <el-table-column prop="address" label="当前矿池"></el-table-column>
+          <el-table-column prop="address" label="剩余电费天数(天)"></el-table-column>
+          <el-table-column prop="address" label="累计产出"></el-table-column>
+          <el-table-column prop="address" label="状态"></el-table-column>
+          <el-table-column prop="address" label="操作"></el-table-column>
+        </el-table>
+        <div class="notList">
+          <i class="el-icon-info"></i>
+          <span>暂无数据...</span>
+        </div>
+      </div>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="allocation = false">取 消</el-button>
+        <el-button type="primary" @click="allocation = false">确 定</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 
@@ -77,6 +103,7 @@ import { getUserHashRate } from "@/api/myOrderList";
 export default {
   data() {
     return {
+      allocation: false,
       tableData3: [
         {
           date: "2016-05-03",
@@ -120,7 +147,24 @@ export default {
     // 加载算力信息
     this.getUserHashRate();
   },
+  watch: {
+    allocation: () => {
+      if (this.allocation) {
+        // 获取矿池分配列表
+        this.getAllocationList()
+      }
+    }
+  },
   methods: {
+    getAllocationList() {
+      // 获取矿池分配列表
+      getAllocationList({ user_uuid: 'b1889ad2d1db416dada6f1a621258a8b'}).then(res => {
+        console.log("*******************123123123**************", res);
+        if (res.data.code == 200) {
+          this.pageDataNode = res.data.data
+        }
+      });
+    },
     // 加载算力信息
     getUserHashRate() {
       getUserHashRate({ user_uuid: 'b1889ad2d1db416dada6f1a621258a8b'}).then(res => {
@@ -138,6 +182,21 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+  .allocationDom {
+    .headTitle {
+      width: 100%;
+      height: auto;
+      div {
+        width: auto;
+        height: 58px;
+        padding: 0 20px;
+        border-bottom: 3px solid #5c82ff;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
+    }
+  }
 .abilityPage {
   width: 1250px;
   height: auto;

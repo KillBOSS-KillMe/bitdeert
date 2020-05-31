@@ -1,4 +1,5 @@
 import axios from "axios";
+import { getToken, setToken } from "@/utils/auth";
 import { MessageBox, Message } from "element-ui";
 import store from "@/store";
 const service = axios.create({
@@ -8,15 +9,10 @@ const service = axios.create({
 });
 service.interceptors.request.use(
   config => {
-
-    const token = store.state.token;
-    console.log(this.$store.state.token)
-    console.log('1111111')
-    console.log(store.getters.token);
+    const token = getToken();
     if (token) {
       config.headers.Authorization = token;
     }
-    // console.log(store.getters.token);
     return config;
   },
   error => {
