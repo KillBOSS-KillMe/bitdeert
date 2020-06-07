@@ -21,7 +21,7 @@
       <li class="viplist">
         <div class="vipleft">
           <h3 class="rubik-medium">
-            BTC/BCH
+            数字产品1号
             <span class="border_bl"></span>
           </h3>
           <div class="vipDateTh">
@@ -41,24 +41,24 @@
           <div class="vipDiff">电费: $0.0754/T/天, 折合 $0.057 /KW·H</div>
         </div>
         <div class="vipright">
-          <p class="power-fee-txt common-txt rubik-medium">算力费</p>
+          <!-- <p class="power-fee-txt common-txt rubik-medium">算力费</p>
           <div class="vipPrice">
             <span>$</span>67300
             <span>.0000</span>
           </div>
-          <p class="equate-fee-txt common-txt rubik-medium">相当于：$0.0374/T/天</p>
+          <p class="equate-fee-txt common-txt rubik-medium">相当于：$0.0374/T/天</p> -->
           <a
             href="/zh/buyContract?algorithmid=1&amp;sku_id=200115967&amp;src=recommend"
             class="vipReserve"
             ga="vipPreOrder"
           >立即购买</a>
-          <p class="package-status common-txt">现货售卖</p>
+          <!-- <p class="package-status common-txt">现货售卖</p> -->
         </div>
       </li>
       <li class="viplist">
         <div class="vipleft">
           <h3 class="rubik-medium">
-            BTC/BCH
+            数字产品2号
             <span class="border_bl"></span>
           </h3>
           <div class="vipDateTh">
@@ -78,24 +78,24 @@
           <div class="vipDiff">电费: $0.0754/T/天, 折合 $0.057 /KW·H</div>
         </div>
         <div class="vipright">
-          <p class="power-fee-txt common-txt rubik-medium">算力费</p>
+          <!-- <p class="power-fee-txt common-txt rubik-medium">算力费</p>
           <div class="vipPrice">
             <span>$</span>40380
             <span>.0000</span>
           </div>
-          <p class="equate-fee-txt common-txt rubik-medium">相当于：$0.0374/T/天</p>
+          <p class="equate-fee-txt common-txt rubik-medium">相当于：$0.0374/T/天</p> -->
           <a
             href="/zh/buyContract?algorithmid=1&amp;sku_id=200115966&amp;src=recommend"
             class="vipReserve"
             ga="vipPreOrder"
           >立即购买</a>
-          <p class="package-status common-txt">现货售卖</p>
+          <!-- <p class="package-status common-txt">现货售卖</p> -->
         </div>
       </li>
       <li class="viplist">
         <div class="vipleft">
           <h3 class="rubik-medium">
-            BTC/BCH
+            数字产品3号
             <span class="border_bl"></span>
           </h3>
           <div class="vipDateTh">
@@ -115,18 +115,204 @@
           <div class="vipDiff">电费: $0.0754/T/天, 折合 $0.057 /KW·H</div>
         </div>
         <div class="vipright">
-          <p class="power-fee-txt common-txt rubik-medium">算力费</p>
+          <!-- <p class="power-fee-txt common-txt rubik-medium">算力费</p>
           <div class="vipPrice">
             <span>$</span>13460
             <span>.0000</span>
           </div>
-          <p class="equate-fee-txt common-txt rubik-medium">相当于：$0.0374/T/天</p>
+          <p class="equate-fee-txt common-txt rubik-medium">相当于：$0.0374/T/天</p> -->
           <a
             href="/zh/buyContract?algorithmid=1&amp;sku_id=200115965&amp;src=recommend"
             class="vipReserve"
             ga="vipPreOrder"
           >立即购买</a>
-          <p class="package-status common-txt">现货售卖</p>
+          <!-- <p class="package-status common-txt">现货售卖</p> -->
+        </div>
+      </li>
+      <li class="viplist">
+        <div class="vipleft">
+          <h3 class="rubik-medium">
+            数字产品4号
+            <span class="border_bl"></span>
+          </h3>
+          <div class="vipDateTh">
+            <div class="days-amount">
+              <span>360 天 × 1000 TH/s</span>
+              <span style="margin-left: 10px;">
+                <i
+                  class="el-tooltip el-icon-info"
+                  style="font-size: 14px; color: rgb(204, 204, 204); opacity: 1;"
+                  aria-describedby="el-tooltip-2729"
+                  tabindex="0"
+                ></i>
+              </span>
+            </div>
+            <span class="border_bl"></span>
+          </div>
+          <div class="vipDiff">电费: $0.0754/T/天, 折合 $0.057 /KW·H</div>
+        </div>
+        <div class="vipright">
+          <!-- <p class="power-fee-txt common-txt rubik-medium">算力费</p>
+          <div class="vipPrice">
+            <span>$</span>13460
+            <span>.0000</span>
+          </div>
+          <p class="equate-fee-txt common-txt rubik-medium">相当于：$0.0374/T/天</p> -->
+          <a
+            href="/zh/buyContract?algorithmid=1&amp;sku_id=200115965&amp;src=recommend"
+            class="vipReserve"
+            ga="vipPreOrder"
+          >立即购买</a>
+          <!-- <p class="package-status common-txt">现货售卖</p> -->
+        </div>
+      </li>
+
+      <li class="viplist unavailable">
+        <div class="vipleft">
+          <h3 class="rubik-medium">
+            数字产品5号
+            <span class="border_bl"></span>
+          </h3>
+          <div class="vipDateTh">
+            <div class="days-amount">
+              <span>360 天 × 1000 TH/s</span>
+              <span style="margin-left: 10px;">
+                <i
+                  class="el-tooltip el-icon-info"
+                  style="font-size: 14px; color: rgb(204, 204, 204); opacity: 1;"
+                  aria-describedby="el-tooltip-2729"
+                  tabindex="0"
+                ></i>
+              </span>
+            </div>
+            <span class="border_bl"></span>
+          </div>
+          <div class="vipDiff">电费: $0.0754/T/天, 折合 $0.057 /KW·H</div>
+        </div>
+        <div class="vipright">
+          <!-- <p class="power-fee-txt common-txt rubik-medium">算力费</p>
+          <div class="vipPrice">
+            <span>$</span>13460
+            <span>.0000</span>
+          </div>
+          <p class="equate-fee-txt common-txt rubik-medium">相当于：$0.0374/T/天</p> -->
+          <a
+            href="/zh/buyContract?algorithmid=1&amp;sku_id=200115965&amp;src=recommend"
+            class="vipReserve"
+            ga="vipPreOrder"
+          >立即购买</a>
+          <!-- <p class="package-status common-txt">现货售卖</p> -->
+        </div>
+      </li>
+      <li class="viplist unavailable">
+        <div class="vipleft">
+          <h3 class="rubik-medium">
+            数字产品6号
+            <span class="border_bl"></span>
+          </h3>
+          <div class="vipDateTh">
+            <div class="days-amount">
+              <span>360 天 × 1000 TH/s</span>
+              <span style="margin-left: 10px;">
+                <i
+                  class="el-tooltip el-icon-info"
+                  style="font-size: 14px; color: rgb(204, 204, 204); opacity: 1;"
+                  aria-describedby="el-tooltip-2729"
+                  tabindex="0"
+                ></i>
+              </span>
+            </div>
+            <span class="border_bl"></span>
+          </div>
+          <div class="vipDiff">电费: $0.0754/T/天, 折合 $0.057 /KW·H</div>
+        </div>
+        <div class="vipright">
+          <!-- <p class="power-fee-txt common-txt rubik-medium">算力费</p>
+          <div class="vipPrice">
+            <span>$</span>13460
+            <span>.0000</span>
+          </div>
+          <p class="equate-fee-txt common-txt rubik-medium">相当于：$0.0374/T/天</p> -->
+          <a
+            href="/zh/buyContract?algorithmid=1&amp;sku_id=200115965&amp;src=recommend"
+            class="vipReserve"
+            ga="vipPreOrder"
+          >立即购买</a>
+          <!-- <p class="package-status common-txt">现货售卖</p> -->
+        </div>
+      </li>
+      <li class="viplist unavailable">
+        <div class="vipleft">
+          <h3 class="rubik-medium">
+            数字产品7号
+            <span class="border_bl"></span>
+          </h3>
+          <div class="vipDateTh">
+            <div class="days-amount">
+              <span>360 天 × 1000 TH/s</span>
+              <span style="margin-left: 10px;">
+                <i
+                  class="el-tooltip el-icon-info"
+                  style="font-size: 14px; color: rgb(204, 204, 204); opacity: 1;"
+                  aria-describedby="el-tooltip-2729"
+                  tabindex="0"
+                ></i>
+              </span>
+            </div>
+            <span class="border_bl"></span>
+          </div>
+          <div class="vipDiff">电费: $0.0754/T/天, 折合 $0.057 /KW·H</div>
+        </div>
+        <div class="vipright">
+          <!-- <p class="power-fee-txt common-txt rubik-medium">算力费</p>
+          <div class="vipPrice">
+            <span>$</span>13460
+            <span>.0000</span>
+          </div>
+          <p class="equate-fee-txt common-txt rubik-medium">相当于：$0.0374/T/天</p> -->
+          <a
+            href="/zh/buyContract?algorithmid=1&amp;sku_id=200115965&amp;src=recommend"
+            class="vipReserve"
+            ga="vipPreOrder"
+          >立即购买</a>
+          <!-- <p class="package-status common-txt">现货售卖</p> -->
+        </div>
+      </li>
+      <li class="viplist unavailable">
+        <div class="vipleft">
+          <h3 class="rubik-medium">
+            数字产品8号
+            <span class="border_bl"></span>
+          </h3>
+          <div class="vipDateTh">
+            <div class="days-amount">
+              <span>360 天 × 1000 TH/s</span>
+              <span style="margin-left: 10px;">
+                <i
+                  class="el-tooltip el-icon-info"
+                  style="font-size: 14px; color: rgb(204, 204, 204); opacity: 1;"
+                  aria-describedby="el-tooltip-2729"
+                  tabindex="0"
+                ></i>
+              </span>
+            </div>
+            <span class="border_bl"></span>
+          </div>
+          <div class="vipDiff">电费: $0.0754/T/天, 折合 $0.057 /KW·H</div>
+        </div>
+        <div class="vipright">
+          <!-- <p class="power-fee-txt common-txt rubik-medium">算力费</p>
+          <div class="vipPrice">
+            <span>$</span>13460
+            <span>.0000</span>
+          </div>
+          <p class="equate-fee-txt common-txt rubik-medium">相当于：$0.0374/T/天</p> -->
+          <a
+            href="/zh/buyContract?algorithmid=1&amp;sku_id=200115965&amp;src=recommend"
+            class="vipReserve"
+            ga="vipPreOrder"
+          >立即购买</a>
+          <!-- <p class="package-status common-txt">现货售卖</p> -->
         </div>
       </li>
     </ul>
@@ -210,24 +396,30 @@ export default {
   .vipContent .viplist,
   .vipCSManager .viplist {
     width: 100%;
-    height: 340px;
+    height: 290px;
     margin-bottom: 20px;
     background: #1f1f25;
     padding: 40px;
     border-radius: 6px;
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2);
   }
+  .vipCSManager .unavailable {
+    background: #ddd !important;
+  }
 }
 .vipBox .vipContent .viplist .vipleft,
 .vipBox .vipCSManager .viplist .vipleft {
   width: 711px;
-  height: 280px;
+  height: 230px;
   border-right: 1px solid hsla(0, 0%, 100%, 0.11);
   box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.08);
   text-align: center;
   margin-right: 40px;
   float: left;
   color: hsla(0, 0%, 100%, 0.85);
+  .rubik-medium {
+    width: 210px;
+  }
 }
 .vipBox .vipContent .viplist h3,
 .vipBox .vipCSManager .viplist h3 {
@@ -280,8 +472,11 @@ export default {
 .vipBox .vipContent .viplist .vipright,
 .vipBox .vipCSManager .viplist .vipright {
   width: 368px;
-  text-align: center;
-  float: right;
+  height: 100%;
+  display: flex;
+align-items: center;
+justify-content: center;
+  // float: right;
 }
 .vipBox .vipContent .viplist .vipright .power-fee-txt,
 .vipBox .vipCSManager .viplist .vipright .power-fee-txt {
