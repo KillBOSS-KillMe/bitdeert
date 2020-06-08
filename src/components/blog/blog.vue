@@ -9,7 +9,7 @@
         </p>
       </div>
     </section>
-    <section class="body">
+    <!-- <section class="body">
       <ul>
         <li>
           <a href="/zh/news/1504" class>
@@ -86,7 +86,7 @@
           <i class="el-icon-arrow-down"></i>
         </button>
       </div>
-    </section>
+    </section> -->
     <!---->
   </div>
 </template>

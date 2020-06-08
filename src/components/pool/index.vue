@@ -16,7 +16,27 @@
         </div>
       </div>
     </div>
-    <ul class="poolitem">
+    <div class="chartsModel">
+      <div class="chartsItem">
+        <h4 class="chartsItemTitle">图表标题</h4>
+        <div class="chartsContent">图表内容</div>
+      </div>
+      <div class="chartsItem">
+        <h4 class="chartsItemTitle">图表标题</h4>
+        <div class="chartsContent">图表内容</div>
+      </div>
+    </div>
+    <div class="chartsModel">
+      <div class="chartsItem">
+        <h4 class="chartsItemTitle">图表标题</h4>
+        <div class="chartsContent">图表内容</div>
+      </div>
+      <div class="chartsItem">
+        <h4 class="chartsItemTitle">图表标题</h4>
+        <div class="chartsContent">图表内容</div>
+      </div>
+    </div>
+    <!-- <ul class="poolitem">
       <li>
         <i class="el-icon-circle-check-outline"></i>
         <span>
@@ -228,8 +248,6 @@
       <div class="pollsildewrap">
         <div class="el-carousel el-carousel--card">
           <div class="el-carousel__container" style="height:400px;">
-            <!---->
-            <!---->
             <div
               class="el-carousel__item el-fade-in-linear el-carousel__item--card is-in-stage"
               style="transform: translateX(-51px) scale(0.83);"
@@ -276,35 +294,73 @@
           <ul class="el-carousel__indicators el-carousel__indicators--outside">
             <li class="el-carousel__indicator">
               <button class="el-carousel__button">
-                <!---->
               </button>
             </li>
             <li class="el-carousel__indicator is-active">
               <button class="el-carousel__button">
-                <!---->
               </button>
             </li>
             <li class="el-carousel__indicator">
               <button class="el-carousel__button">
-                <!---->
               </button>
             </li>
           </ul>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 <script>
 export default {
   data() {
     return {};
+  },
+  mounted() {
+    console.log("--------------------");
+    // console.log(this.$store.state.pageDomNode);
+    console.log("--------------------");
+    this.charts_1()
+    // 显示默认组件列表
+    // this.templateTypeSel();
+  },
+  methods: {
+    charts_1(path) {
+      this.$router.push(path);
+    }
   }
 };
 </script>
 <style lang="scss" scoped>
+.chartsModel {
+  width: 1200px;
+  height: auto;
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1c1f28;
+  .chartsItem {
+    width: 590px;
+    height: auto;
+    background-color: #3f465c;
+    .chartsItemTitle {
+      width: 100%;
+      height: auto;
+      padding: 20px;
+      color: #fff;
+    }
+    .chartsContent {
+      width: 100%;
+      height: 500px;
+    }
+  }
+}
+
+
+
 .pool {
-  background: #f7f7f7;
+  // background: #f7f7f7;
+  background: #1c1f28;
   margin-top: 0;
 }
 .poolvideo {
