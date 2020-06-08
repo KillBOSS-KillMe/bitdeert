@@ -19,21 +19,21 @@
     <div class="chartsModel">
       <div class="chartsItem">
         <h4 class="chartsItemTitle">图表标题</h4>
-        <div class="chartsContent">图表内容</div>
+        <div class="chartsContent" id="charts_1">图表内容</div>
       </div>
       <div class="chartsItem">
         <h4 class="chartsItemTitle">图表标题</h4>
-        <div class="chartsContent">图表内容</div>
+        <div class="chartsContent" id="charts_2">图表内容</div>
       </div>
     </div>
     <div class="chartsModel">
       <div class="chartsItem">
         <h4 class="chartsItemTitle">图表标题</h4>
-        <div class="chartsContent">图表内容</div>
+        <div class="chartsContent" id="charts_3">图表内容</div>
       </div>
       <div class="chartsItem">
         <h4 class="chartsItemTitle">图表标题</h4>
-        <div class="chartsContent">图表内容</div>
+        <div class="chartsContent" id="charts_4">图表内容</div>
       </div>
     </div>
     <!-- <ul class="poolitem">
@@ -307,7 +307,7 @@
           </ul>
         </div>
       </div>
-    </div> -->
+    </div>-->
   </div>
 </template>
 <script>
@@ -319,13 +319,168 @@ export default {
     console.log("--------------------");
     // console.log(this.$store.state.pageDomNode);
     console.log("--------------------");
-    this.charts_1()
+    this.charts_1();
+    this.charts_2();
+    this.charts_3();
+    this.charts_4();
     // 显示默认组件列表
     // this.templateTypeSel();
   },
   methods: {
-    charts_1(path) {
-      this.$router.push(path);
+    charts_1() {
+      let chartDomNode = this.$echarts.init(
+        document.getElementById("charts_1")
+      );
+      chartDomNode.setOption({
+        xAxis: {
+          type: "category",
+          data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+        },
+        yAxis: {
+          type: "value"
+        },
+        series: [
+          {
+            data: [820, 932, 901, 934, 1290, 1330, 1320],
+            type: "line"
+          }
+        ]
+      });
+    },
+    charts_2() {
+      let chartDomNode = this.$echarts.init(
+        document.getElementById("charts_2")
+      );
+      chartDomNode.setOption({
+        tooltip: {
+          trigger: "item",
+          formatter: "{a} <br/>{b}: {c} ({d}%)"
+        },
+        legend: {
+          orient: "vertical",
+          left: 10,
+          data: ["直接访问", "邮件营销", "联盟广告", "视频广告", "搜索引擎"]
+        },
+        series: [
+          {
+            name: "访问来源",
+            type: "pie",
+            radius: ["50%", "70%"],
+            avoidLabelOverlap: false,
+            label: {
+              show: false,
+              position: "center"
+            },
+            emphasis: {
+              label: {
+                show: true,
+                fontSize: "30",
+                fontWeight: "bold"
+              }
+            },
+            labelLine: {
+              show: false
+            },
+            data: [
+              { value: 335, name: "直接访问" },
+              { value: 310, name: "邮件营销" },
+              { value: 234, name: "联盟广告" },
+              { value: 135, name: "视频广告" },
+              { value: 1548, name: "搜索引擎" }
+            ]
+          }
+        ]
+      });
+    },
+    charts_3() {
+      let chartDomNode = this.$echarts.init(
+        document.getElementById("charts_3")
+      );
+      chartDomNode.setOption({
+        color: ["#3398DB"],
+        tooltip: {
+          trigger: "axis",
+          axisPointer: {
+            // 坐标轴指示器，坐标轴触发有效
+            type: "shadow" // 默认为直线，可选为：'line' | 'shadow'
+          }
+        },
+        grid: {
+          left: "3%",
+          right: "4%",
+          bottom: "3%",
+          containLabel: true
+        },
+        xAxis: [
+          {
+            type: "category",
+            data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+            axisTick: {
+              alignWithLabel: true
+            }
+          }
+        ],
+        yAxis: [
+          {
+            type: "value"
+          }
+        ],
+        series: [
+          {
+            name: "直接访问",
+            type: "bar",
+            barWidth: "60%",
+            data: [10, 52, 200, 334, 390, 330, 220]
+          }
+        ]
+      });
+    },
+    charts_4() {
+      let chartDomNode = this.$echarts.init(
+        document.getElementById("charts_4")
+      );
+      chartDomNode.setOption({
+        dataset: {
+          source: [
+            ["score", "amount", "product"],
+            [89.3, 58212, "Matcha Latte"],
+            [57.1, 78254, "Milk Tea"],
+            [74.4, 41032, "Cheese Cocoa"],
+            [50.1, 12755, "Cheese Brownie"],
+            [89.7, 20145, "Matcha Cocoa"],
+            [68.1, 79146, "Tea"],
+            [19.6, 91852, "Orange Juice"],
+            [10.6, 101852, "Lemon Juice"],
+            [32.7, 20112, "Walnut Brownie"]
+          ]
+        },
+        grid: { containLabel: true },
+        xAxis: { name: "amount" },
+        yAxis: { type: "category" },
+        visualMap: {
+          orient: "horizontal",
+          left: "center",
+          min: 10,
+          max: 100,
+          text: ["High Score", "Low Score"],
+          // Map the score column to color
+          dimension: 0,
+          inRange: {
+            color: ["#D7DA8B", "#E15457"]
+          }
+        },
+        series: [
+          {
+            type: "bar",
+            encode: {
+              // Map the "amount" column to X axis.
+              x: "amount",
+              // Map the "product" column to Y axis
+              y: "product"
+            }
+          }
+        ]
+      });
     }
   }
 };
@@ -355,8 +510,6 @@ export default {
     }
   }
 }
-
-
 
 .pool {
   // background: #f7f7f7;
