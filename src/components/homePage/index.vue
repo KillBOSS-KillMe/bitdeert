@@ -1,11 +1,11 @@
 <template>
   <div id="index" class="home">
     <swipe />
-    <pricing-enter id="pricing" />
+    <!-- <pricing-enter id="pricing" />
     <mining-steps />
     <advantage />
     <famous-news />
-    <partner />
+    <partner /> -->
   </div>
 </template>
 <script>
