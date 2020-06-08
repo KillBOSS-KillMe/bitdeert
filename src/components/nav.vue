@@ -184,7 +184,7 @@ export default {
       indexnav: null,
       navList: [
         { title: "首页", link: "homePage", icon: "" },
-        { title: "价格", link: "pricing", icon: "" },
+        // { title: "价格", link: "pricing", icon: "" },
         { title: "产品", link: "Vip", icon: "" },
         { title: "矿池", link: "Pool", icon: "" },
         { title: "新闻", link: "News", icon: "" },

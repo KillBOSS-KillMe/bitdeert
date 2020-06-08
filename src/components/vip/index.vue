@@ -13,6 +13,7 @@
             class="el-icon-info tip-15 el-tooltip"
             aria-describedby="el-tooltip-7229"
             tabindex="0"
+             title="提示占位提示占位提示占位提示占位提示占位"
           ></i>
         </p>
       </div>
@@ -200,7 +201,7 @@
             href="/zh/buyContract?algorithmid=1&amp;sku_id=200115965&amp;src=recommend"
             class="vipReserve"
             ga="vipPreOrder"
-          >立即购买</a>
+          >敬请期待</a>
           <!-- <p class="package-status common-txt">现货售卖</p> -->
         </div>
       </li>
@@ -237,7 +238,7 @@
             href="/zh/buyContract?algorithmid=1&amp;sku_id=200115965&amp;src=recommend"
             class="vipReserve"
             ga="vipPreOrder"
-          >立即购买</a>
+          >敬请期待</a>
           <!-- <p class="package-status common-txt">现货售卖</p> -->
         </div>
       </li>
@@ -274,7 +275,7 @@
             href="/zh/buyContract?algorithmid=1&amp;sku_id=200115965&amp;src=recommend"
             class="vipReserve"
             ga="vipPreOrder"
-          >立即购买</a>
+          >敬请期待</a>
           <!-- <p class="package-status common-txt">现货售卖</p> -->
         </div>
       </li>
@@ -311,7 +312,7 @@
             href="/zh/buyContract?algorithmid=1&amp;sku_id=200115965&amp;src=recommend"
             class="vipReserve"
             ga="vipPreOrder"
-          >立即购买</a>
+          >敬请期待</a>
           <!-- <p class="package-status common-txt">现货售卖</p> -->
         </div>
       </li>
@@ -403,8 +404,12 @@ export default {
     border-radius: 6px;
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2);
   }
+  .vipContent .unavailable,
   .vipCSManager .unavailable {
     background: #ddd !important;
+    .vipReserve {
+      background: #999;
+    }
   }
 }
 .vipBox .vipContent .viplist .vipleft,
