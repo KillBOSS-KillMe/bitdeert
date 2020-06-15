@@ -3,7 +3,7 @@
     <div class="vipBanner">
       <div class="vipBannerCon">
         <div class="vipTxt">
-          <img src="https://www.bitdeer.com/_nuxt/img/a4f36c2.png" class="vipRoyal" />
+          <img src="https://www.bitdeer.com/_nuxt/img/a4f36c2.png" class="vipRoyal">
           <p>VIP专区</p>
           <p>大额算力采购，价格更优，尊享1对1售前售后服务</p>
         </div>
@@ -13,7 +13,7 @@
             class="el-icon-info tip-15 el-tooltip"
             aria-describedby="el-tooltip-7229"
             tabindex="0"
-             title="提示占位提示占位提示占位提示占位提示占位"
+            title="提示占位提示占位提示占位提示占位提示占位"
           ></i>
         </p>
       </div>
@@ -47,11 +47,10 @@
             <span>$</span>67300
             <span>.0000</span>
           </div>
-          <p class="equate-fee-txt common-txt rubik-medium">相当于：$0.0374/T/天</p> -->
+          <p class="equate-fee-txt common-txt rubik-medium">相当于：$0.0374/T/天</p>-->
           <a
-            href="/zh/buyContract?algorithmid=1&amp;sku_id=200115967&amp;src=recommend"
+             @click="goPage(1, 'order')"
             class="vipReserve"
-            ga="vipPreOrder"
           >立即购买</a>
           <!-- <p class="package-status common-txt">现货售卖</p> -->
         </div>
@@ -84,11 +83,11 @@
             <span>$</span>40380
             <span>.0000</span>
           </div>
-          <p class="equate-fee-txt common-txt rubik-medium">相当于：$0.0374/T/天</p> -->
+          <p class="equate-fee-txt common-txt rubik-medium">相当于：$0.0374/T/天</p>-->
           <a
-            href="/zh/buyContract?algorithmid=1&amp;sku_id=200115966&amp;src=recommend"
+             @click="goPage(1, 'order')"
             class="vipReserve"
-            ga="vipPreOrder"
+            ga="order"
           >立即购买</a>
           <!-- <p class="package-status common-txt">现货售卖</p> -->
         </div>
@@ -121,12 +120,8 @@
             <span>$</span>13460
             <span>.0000</span>
           </div>
-          <p class="equate-fee-txt common-txt rubik-medium">相当于：$0.0374/T/天</p> -->
-          <a
-            href="/zh/buyContract?algorithmid=1&amp;sku_id=200115965&amp;src=recommend"
-            class="vipReserve"
-            ga="vipPreOrder"
-          >立即购买</a>
+          <p class="equate-fee-txt common-txt rubik-medium">相当于：$0.0374/T/天</p>-->
+          <a @click="goPage(1, 'order')" class="vipReserve">立即购买</a>
           <!-- <p class="package-status common-txt">现货售卖</p> -->
         </div>
       </li>
@@ -158,12 +153,8 @@
             <span>$</span>13460
             <span>.0000</span>
           </div>
-          <p class="equate-fee-txt common-txt rubik-medium">相当于：$0.0374/T/天</p> -->
-          <a
-            href="/zh/buyContract?algorithmid=1&amp;sku_id=200115965&amp;src=recommend"
-            class="vipReserve"
-            ga="vipPreOrder"
-          >立即购买</a>
+          <p class="equate-fee-txt common-txt rubik-medium">相当于：$0.0374/T/天</p>-->
+          <a @click="goPage(1, 'order')" class="vipReserve">立即购买</a>
           <!-- <p class="package-status common-txt">现货售卖</p> -->
         </div>
       </li>
@@ -196,12 +187,8 @@
             <span>$</span>13460
             <span>.0000</span>
           </div>
-          <p class="equate-fee-txt common-txt rubik-medium">相当于：$0.0374/T/天</p> -->
-          <a
-            href="/zh/buyContract?algorithmid=1&amp;sku_id=200115965&amp;src=recommend"
-            class="vipReserve"
-            ga="vipPreOrder"
-          >敬请期待</a>
+          <p class="equate-fee-txt common-txt rubik-medium">相当于：$0.0374/T/天</p>-->
+          <a @click="goPage(1, 'order')" class="vipReserve">敬请期待</a>
           <!-- <p class="package-status common-txt">现货售卖</p> -->
         </div>
       </li>
@@ -233,12 +220,8 @@
             <span>$</span>13460
             <span>.0000</span>
           </div>
-          <p class="equate-fee-txt common-txt rubik-medium">相当于：$0.0374/T/天</p> -->
-          <a
-            href="/zh/buyContract?algorithmid=1&amp;sku_id=200115965&amp;src=recommend"
-            class="vipReserve"
-            ga="vipPreOrder"
-          >敬请期待</a>
+          <p class="equate-fee-txt common-txt rubik-medium">相当于：$0.0374/T/天</p>-->
+          <a @click="goPage(1, 'order')" class="vipReserve">敬请期待</a>
           <!-- <p class="package-status common-txt">现货售卖</p> -->
         </div>
       </li>
@@ -270,12 +253,8 @@
             <span>$</span>13460
             <span>.0000</span>
           </div>
-          <p class="equate-fee-txt common-txt rubik-medium">相当于：$0.0374/T/天</p> -->
-          <a
-            href="/zh/buyContract?algorithmid=1&amp;sku_id=200115965&amp;src=recommend"
-            class="vipReserve"
-            ga="vipPreOrder"
-          >敬请期待</a>
+          <p class="equate-fee-txt common-txt rubik-medium">相当于：$0.0374/T/天</p>-->
+          <a @click="goPage(1, 'order')" class="vipReserve">敬请期待</a>
           <!-- <p class="package-status common-txt">现货售卖</p> -->
         </div>
       </li>
@@ -307,12 +286,8 @@
             <span>$</span>13460
             <span>.0000</span>
           </div>
-          <p class="equate-fee-txt common-txt rubik-medium">相当于：$0.0374/T/天</p> -->
-          <a
-            href="/zh/buyContract?algorithmid=1&amp;sku_id=200115965&amp;src=recommend"
-            class="vipReserve"
-            ga="vipPreOrder"
-          >敬请期待</a>
+          <p class="equate-fee-txt common-txt rubik-medium">相当于：$0.0374/T/天</p>-->
+          <a @click="goPage(1, 'order')" class="vipReserve">敬请期待</a>
           <!-- <p class="package-status common-txt">现货售卖</p> -->
         </div>
       </li>
@@ -327,9 +302,17 @@
 </template>
 
 <script>
+import { getSaleCoin } from "@/api/nav.js";
 export default {
   data() {
     return {};
+  },
+  methods: {
+    goPage(index, path) {
+      console.log(path);
+      this.indexnav = index;
+      this.$router.push(path);
+    }
   }
 };
 </script>
@@ -479,8 +462,8 @@ export default {
   width: 368px;
   height: 100%;
   display: flex;
-align-items: center;
-justify-content: center;
+  align-items: center;
+  justify-content: center;
   // float: right;
 }
 .vipBox .vipContent .viplist .vipright .power-fee-txt,

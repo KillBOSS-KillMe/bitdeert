@@ -22,7 +22,7 @@
                   :value="item.value"
                 ></el-option>
               </el-select>
-              <span class="change-tip">(SHA256矿机共享套餐)</span>
+              <span class="change-tip">BTC</span>
             </el-form-item>
             <el-form-item label="机型">
               <span class="form-label-txt">{{ Oform.models }}</span>
