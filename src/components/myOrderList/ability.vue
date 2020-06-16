@@ -2,15 +2,15 @@
   <div class="abilityPage">
     <div class="head">
       <div class="headTitle">
-        <i class="el-icon-info"></i>
+        <!-- <i class="el-icon-info"></i> -->
         <div class="info">
           <h4>BTC</h4>
-          <span>0个套餐正在挖矿</span>
+          <!-- <span>0个套餐正在挖矿</span> -->
         </div>
       </div>
     </div>
     <div class="dataInfo">
-      <div class="allCalculation">
+      <!-- <div class="allCalculation">
         <i class="modelIcon el-icon-info"></i>
         <div class="info">
           <span class="title">总算力</span>
@@ -22,22 +22,22 @@
           </div>
           <div class="botton" @click="allocation = true">矿池分配</div>
         </div>
-      </div>
+      </div> -->
       <div class="allOutput">
-        <i class="modelIcon el-icon-info"></i>
+        <!-- <i class="modelIcon el-icon-info"></i> -->
         <div class="info">
           <span class="title">
             总算力
-            <i class="el-icon-info"></i>
+            <!-- <i class="el-icon-info"></i> -->
           </span>
           <div class="data">
             <div>
               0000
               <span>TH/s</span>
             </div>
-            <span class="more" @click="goAllList">更多产出数据></span>
+            <!-- <span class="more" @click="goAllList">更多产出数据></span> -->
           </div>
-          <div class="price">≈ $0.00</div>
+          <div class="price">≈ ￥0.00</div>
         </div>
       </div>
     </div>
@@ -45,14 +45,14 @@
       <div class="titleCon">
         <div class="title">
           <i class="el-icon-info"></i>
-          算力列表
+          收益详情
         </div>
-        <ul class="titlelist">
+        <!-- <ul class="titlelist">
           <li>全部</li>
           <li>待生效</li>
           <li>生效中</li>
           <li>已结束</li>
-        </ul>
+        </ul> -->
       </div>
       <el-table :data="tableData3" height="550" border style="width: 100%">
         <el-table-column prop="date" label="相应订单号" width="180"></el-table-column>
@@ -214,33 +214,34 @@ export default {
       box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
     }
     .headTitle {
-      width: 200px;
+      width: 100px;
       height: 58px;
       padding: 0 20px;
       border-bottom: 3px solid #5c82ff;
       display: flex;
       align-items: center;
-      justify-content: flex-start;
-      i {
-        font-size: 30px;
-        color: rgb(255, 157, 50);
-      }
-      .info {
-        margin-left: 10px;
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
-        flex-direction: column;
-        h4 {
+      justify-content: center;
+      h4 {
           font-size: 20px;
           font-weight: 700;
           color: #333;
         }
-        span {
-          font-size: 12px;
-          color: #999;
-        }
-      }
+      // i {
+      //   font-size: 30px;
+      //   color: rgb(255, 157, 50);
+      // }
+      // .info {
+      //   margin-left: 10px;
+      //   display: flex;
+      //   align-items: flex-start;
+      //   justify-content: space-between;
+      //   flex-direction: column;
+        
+      //   span {
+      //     font-size: 12px;
+      //     color: #999;
+      //   }
+      // }
     }
   }
   .dataInfo {
@@ -254,6 +255,7 @@ export default {
     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
     .allCalculation,
     .allOutput {
+      width: 100%;
       height: 190px;
       padding: 30px 20px;
       display: flex;
@@ -334,10 +336,11 @@ export default {
       }
     }
     .allOutput {
-      width: 820px;
+      // width: 820px;
       box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
       .info {
-        width: 633px;
+        width: 100%;
+        // width: 633px;
       }
       .data {
         border-bottom: 1px solid #ddd;

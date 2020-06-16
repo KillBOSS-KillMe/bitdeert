@@ -1,8 +1,8 @@
 <template>
   <div class="abilityPage">
-    <ul class="head">
+    <!-- <ul class="head">
       <li v-for="(item,index) of titleList" :key="index" :class="{active: thisTitleIndex === index}" @click="selList(index)">{{item}}</li>
-    </ul>
+    </ul> -->
     <div class="listCon">
       <el-table :data="tableData3" height="550" border style="width: 100%">
         <el-table-column prop="date" label="下单日期" width="180"></el-table-column>
@@ -90,9 +90,12 @@ export default {
 </script>
 <style lang="scss" scoped>
 .abilityPage {
-  width: 1250px;
+  width: 1330px;
   height: auto;
   padding: 10px;
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px;
   .head {
     width: 100%;
     height: 60px;

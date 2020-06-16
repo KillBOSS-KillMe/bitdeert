@@ -10,19 +10,19 @@
         >
           <el-menu-item index="1" @click="goPage(1, 'ability')">
             <i class="el-icon-menu"></i>
-            <span slot="title">我的算力</span>
+            <span slot="title">我的收益</span>
           </el-menu-item>
           <el-menu-item index="2" @click="goPage(1, 'orderList')">
             <i class="el-icon-menu"></i>
             <span slot="title">我的订单</span>
           </el-menu-item>
-          <el-menu-item index="3" @click="goPage(1, 'myCoupon')">
+          <!-- <el-menu-item index="3" @click="goPage(1, 'myCoupon')">
             <i class="el-icon-menu"></i>
             <span slot="title">我的礼券</span>
-          </el-menu-item>
+          </el-menu-item> -->
           <el-menu-item index="4" @click="goPage(1, 'promote')">
             <i class="el-icon-menu"></i>
-            <span slot="title">推广</span>
+            <span slot="title">活动</span>
           </el-menu-item>
           <el-submenu index="5">
             <template slot="title">
@@ -30,9 +30,9 @@
               <span>设置</span>
             </template>
             <el-menu-item-group>
+              <el-menu-item index="5-3" @click="goPage(1, 'accountCenter')">账号设置</el-menu-item>
               <el-menu-item index="5-1" @click="goPage(1, 'incomeAddress')">收益地址</el-menu-item>
               <el-menu-item index="5-2" @click="goPage(1, 'reminderSettings')">提醒设置</el-menu-item>
-              <el-menu-item index="5-3" @click="goPage(1, 'accountCenter')">账号设置</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
         </el-menu>
