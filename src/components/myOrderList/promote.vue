@@ -1,6 +1,6 @@
 <template>
   <div class="abilityPage">
-    <img class="banner" src="@/assets/img/ffed004.jpg" alt>
+    <!-- <img class="banner" src="@/assets/img/ffed004.jpg" alt>
     <ul class="lvList">
       <li class="active">
         <div class="title">
@@ -143,7 +143,7 @@
         </div>
         <el-pagination background layout="prev, pager, next" :total="1000"></el-pagination>
       </div>
-    </div>
+    </div> -->
     <el-dialog
       title="提币地址"
       :visible.sync="newAddress"
@@ -203,9 +203,9 @@ export default {
     };
   },
   mounted() {
-    console.log("--------------------");
-    // console.log(this.$store.state.pageDomNode);
-    console.log("--------------------");
+    // console.log("--------------------");
+    // // console.log(this.$store.state.pageDomNode);
+    // console.log("--------------------");
     // 显示默认组件列表
     // this.templateTypeSel();
   },
