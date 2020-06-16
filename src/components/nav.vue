@@ -59,9 +59,22 @@
                     <i class="el-icon-caret-bottom"></i>
                   </span>
                   <el-dropdown-menu slot="dropdown" class="dashboard-dropdown">
+                    <el-popover
+                      placement="right"
+                      width="300"
+                      trigger="hover">
+                      <div class="balance">
+                        <span>账户余额</span>
+                        <span>BTC 0.0000000</span>
+                        <h4>￥100.00</h4>
+                      </div>
+                      <!-- <el-button >click 激活</el-button> -->
+                      <el-dropdown-item slot="reference">钱包</el-dropdown-item>
+                    </el-popover>
+                    <el-dropdown-item>我的收益</el-dropdown-item>
                     <el-dropdown-item>我的订单</el-dropdown-item>
-                    <el-dropdown-item>我的电费</el-dropdown-item>
                     <el-dropdown-item>推广</el-dropdown-item>
+                    <el-dropdown-item>设置</el-dropdown-item>
                     <el-dropdown-item>
                       退出
                       <i class="el-icon-right"></i>
@@ -567,6 +580,24 @@ a {
   margin-left: -6px;
   border-top-width: 0;
   border-bottom-color: #333749;
+}
+
+.balance {
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 12px;
+  color: #343434;
+  // padding-top: 50px;
+  * {
+    padding: 10px 0;
+  }
+  h4 {
+    font-size: 15px;
+    font-weight: 700;
+  }
 }
 </style>
 <style>
