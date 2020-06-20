@@ -1,20 +1,20 @@
 <template>
   <div class="abilityPage">
     <div class="form">
+      <div class="set remindType">
+        <label class="title">提醒类型</label>
+        <el-radio v-model="remindType" label="1">邮箱</el-radio>
+      </div>
       <div class="set">
-        <div class="title">提醒类型</div>
+        <label class="title">套餐到期前7天提醒我</label>
         <el-switch active-color="#13ce66" inactive-color="#ff4949" v-model="value2"></el-switch>
       </div>
       <div class="set">
-        <div class="title">套餐到期前7天提醒我</div>
+        <label class="title">套餐到期前1天提醒我</label>
         <el-switch active-color="#13ce66" inactive-color="#ff4949" v-model="value2"></el-switch>
       </div>
       <div class="set">
-        <div class="title">套餐到期前1天提醒我</div>
-        <el-switch active-color="#13ce66" inactive-color="#ff4949" v-model="value2"></el-switch>
-      </div>
-      <div class="set">
-        <div class="title">订单失效后提醒我</div>
+        <label class="title">订单失效后提醒我</label>
         <el-switch active-color="#13ce66" inactive-color="#ff4949" v-model="value2"></el-switch>
       </div>
       <div class="sub">
@@ -28,6 +28,7 @@
 export default {
   data() {
     return {
+      remindType: '1',
       value2: true
     };
   },
@@ -51,6 +52,9 @@ export default {
     width: 700px;
     height: auto;
     padding: 20px;
+    .remindType {
+      justify-content: flex-start !important;
+    }
     .set {
       width: 100%;
       height: auto;
@@ -60,6 +64,9 @@ export default {
       padding: 30px 0;
       color: #333;
       border-bottom: 1px dashed #999;
+      label {
+        padding-right: 50px;
+      }
     }
     .sub {
       width: 100%;
