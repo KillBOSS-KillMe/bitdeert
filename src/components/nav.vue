@@ -24,7 +24,7 @@
                 :to="{ name: 'Home' }"
                 class="logo-link nuxt-link-exact-active nuxt-link-active"
               >
-                <img src="@/assets/img/00b389e.png" alt="logo" class="logo" />
+                <img src="@/assets/img/00b389e.png" alt="logo" class="logo">
               </router-link>
               <ul class="nav">
                 <li
@@ -59,10 +59,7 @@
                     <i class="el-icon-caret-bottom"></i>
                   </span>
                   <el-dropdown-menu slot="dropdown" class="dashboard-dropdown">
-                    <el-popover
-                      placement="right"
-                      width="300"
-                      trigger="hover">
+                    <el-popover placement="right" width="300" trigger="hover">
                       <div class="balance">
                         <span>账户余额</span>
                         <span>BTC 0.0000000</span>
@@ -71,10 +68,18 @@
                       <!-- <el-button >click 激活</el-button> -->
                       <el-dropdown-item slot="reference">钱包</el-dropdown-item>
                     </el-popover>
-                    <el-dropdown-item>我的收益</el-dropdown-item>
-                    <el-dropdown-item>我的订单</el-dropdown-item>
-                    <el-dropdown-item>推广</el-dropdown-item>
-                    <el-dropdown-item>设置</el-dropdown-item>
+                    <el-dropdown-item>
+                      <span @click="goPage('ability')">我的收益</span>
+                    </el-dropdown-item>
+                    <el-dropdown-item>
+                      <span @click="goPage('orderList')">我的订单</span>
+                    </el-dropdown-item>
+                    <el-dropdown-item>
+                      <span @click="goPage('promote')">活动</span>
+                    </el-dropdown-item>
+                    <el-dropdown-item>
+                      <span @click="goPage('accountCenter')">设置</span>
+                    </el-dropdown-item>
                     <el-dropdown-item>
                       退出
                       <i class="el-icon-right"></i>
@@ -85,7 +90,7 @@
               <div class="locales">
                 <div class="el-dropdown">
                   <span class="el-dropdown-link locale-dp-link">
-                    <img src="@/assets/svg/CN.svg" />
+                    <img src="@/assets/svg/CN.svg">
                     <span style="color:#fff;">简体中文</span>
                     <i class="el-icon-caret-bottom" style="color:#fff;"></i>
                   </span>
@@ -96,49 +101,49 @@
                   >
                     <li tabindex="-1" class="el-dropdown-menu__item">
                       <a>
-                        <img src="EN.svg" />
+                        <img src="EN.svg">
                         <span>English</span>
                       </a>
                     </li>
                     <li tabindex="-1" class="el-dropdown-menu__item">
                       <a>
-                        <img src="CN.svg" />
+                        <img src="CN.svg">
                         <span>繁體中文</span>
                       </a>
                     </li>
                     <li tabindex="-1" class="el-dropdown-menu__item">
                       <a>
-                        <img src="RU.svg" />
+                        <img src="RU.svg">
                         <span>Pусский</span>
                       </a>
                     </li>
                     <li tabindex="-1" class="el-dropdown-menu__item">
                       <a>
-                        <img src="DE.svg" />
+                        <img src="DE.svg">
                         <span>Deutsch</span>
                       </a>
                     </li>
                     <li tabindex="-1" class="el-dropdown-menu__item">
                       <a>
-                        <img src="ES.svg" />
+                        <img src="ES.svg">
                         <span>Español</span>
                       </a>
                     </li>
                     <li tabindex="-1" class="el-dropdown-menu__item">
                       <a>
-                        <img src="JA.svg" />
+                        <img src="JA.svg">
                         <span>日本語</span>
                       </a>
                     </li>
                     <li tabindex="-1" class="el-dropdown-menu__item">
                       <a>
-                        <img src="KO.svg" />
+                        <img src="KO.svg">
                         <span>한국어</span>
                       </a>
                     </li>
                     <li tabindex="-1" class="el-dropdown-menu__item">
                       <a>
-                        <img src="FR.svg" />
+                        <img src="FR.svg">
                         <span>Français</span>
                       </a>
                     </li>
@@ -156,17 +161,11 @@
         >
           <div class="p-content zh">
             <ul>
-              <li
-                v-for="(item, index) in pricingList"
-                :key="index"
-                @click="pricingClick()"
-              >
-                <router-link
-                  :to="{ name: 'pricing', params: { id: item.coinUuid } }"
-                >
+              <li v-for="(item, index) in pricingList" :key="index" @click="pricingClick()">
+                <router-link :to="{ name: 'pricing', params: { id: item.coinUuid } }">
                   <section>
                     <div class="p-icon">
-                      <img :src="item.coin_icon" alt />
+                      <img :src="item.coin_icon" alt>
                     </div>
                     <div>
                       <p title="BTC/BCH" class="name">{{ item.coin_symbol }}</p>
@@ -234,6 +233,9 @@ export default {
         console.log("数字货币", res.data);
         this.pricingList = res.data.data;
       }
+    },
+    goPage(path) {
+      this.$router.push(path);
     },
     handleSelect(key, keyPath) {
       console.log(key, keyPath);
