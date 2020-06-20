@@ -1,30 +1,44 @@
 <template>
   <div class="abilityPage">
-    <ul class="head">
-      <li v-for="(item,index) of titleList" :key="index" :class="{active: thisTitleIndex === index}" @click="selList(index)">{{item}}</li>
+    <ul class="entranceList">
+      <li @click="sysTopUp">充值</li>
+      <li @click="reflect">提现</li>
+      <li @click="newAddress">添加BTC地址</li>
     </ul>
 
-    <div class="listCon">
-      <div class="listShow">
-        CKB 币种已支持的矿池：AntPool
+    <el-dialog title="充值" :visible.sync="sysTopUpShow" width="20%" :before-close="handleClose" center="true">
+      <div class="boxDom">
+        <el-input v-model="input" placeholder="银行"></el-input>
+        <el-input v-model="input" placeholder="账号"></el-input>
+        <el-input v-model="input" placeholder="姓名"></el-input>
       </div>
-      <el-table :data="tableData3" height="550" border style="width: 100%">
-        <el-table-column prop="date" label="下单日期" width="180"></el-table-column>
-        <el-table-column prop="name" label="订单ID" width="180"></el-table-column>
-        <el-table-column prop="address" label="商品名称"></el-table-column>
-        <el-table-column prop="address" label="订单总金额"></el-table-column>
-        <el-table-column prop="address" label="全部"></el-table-column>
-      </el-table>
-      
-      <div class="notList">
-        <i class="el-icon-info"></i>
-        <span>暂无数据...</span>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="sysTopUpShow = false">取 消</el-button>
+        <el-button type="primary" @click="sysTopUpShow = false">确 定</el-button>
+      </span>
+    </el-dialog>
+    <el-dialog title="提现" :visible.sync="reflectDom" width="20%" :before-close="handleClose" center="true">
+      <div class="boxDom">
+        <el-input v-model="input" placeholder="银行"></el-input>
+        <el-input v-model="input" placeholder="账号"></el-input>
+        <el-input v-model="input" placeholder="姓名"></el-input>
       </div>
-      <el-pagination background layout="prev, pager, next" :total="1000"></el-pagination>
-      <div class="newAddress">
-        <div>+ 添加新的CKB地址</div>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="reflectDom = false">取 消</el-button>
+        <el-button type="primary" @click="reflectDom = false">确 定</el-button>
+      </span>
+    </el-dialog>
+    <el-dialog title="添加BTC地址" :visible.sync="newAddressDom" width="20%" :before-close="handleClose" center="true">
+      <div class="boxDom">
+        <el-input v-model="input" placeholder="请输入BTC地址"></el-input>
+        <el-input v-model="input" placeholder="请输入该地址的备注，可不填"></el-input>
+        <span>注：为了您的资金安全，后续添加地址时需要进行双身份验证，双身份验证是指需要校验邮箱、手机号、等身份中的两种。</span>
       </div>
-    </div>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="newAddressDom = false">取 消</el-button>
+        <el-button type="primary" @click="newAddressDom = false">确 定</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 
@@ -32,170 +46,62 @@
 export default {
   data() {
     return {
-      titleList: ['BTC', 'BCH', 'LTC', 'ETH', 'DCR', 'ZEC', 'DASH', 'ETC', 'CKB'],
-      thisTitleIndex: 0,
-      tableData3: [
-        {
-          date: "2016-05-03",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1518 弄"
-        },
-        {
-          date: "2016-05-02",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1518 弄"
-        },
-        {
-          date: "2016-05-04",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1518 弄"
-        },
-        {
-          date: "2016-05-01",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1518 弄"
-        },
-        {
-          date: "2016-05-08",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1518 弄"
-        },
-        {
-          date: "2016-05-06",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1518 弄"
-        },
-        {
-          date: "2016-05-07",
-          name: "王小虎",
-          address: "上海市普陀区金沙江路 1518 弄"
-        }
-      ]
+      sysTopUpShow: false,
+      reflectDom: false,
+      newAddressDom: false
     };
   },
   methods: {
-    selList(index) {
-      this.thisTitleIndex = index
+    sysTopUp() {
+      this.sysTopUpShow = !this.sysTopUpShow
     },
-    handleOpen(key, keyPath) {
-      console.log(key, keyPath);
+    reflect() {
+      this.reflectDom = !this.reflectDom
     },
-    handleClose(key, keyPath) {
-      console.log(key, keyPath);
+    newAddress() {
+      this.newAddressDom = !this.newAddressDom
     }
   }
 };
 </script>
 <style lang="scss" scoped>
 .abilityPage {
-  width: 1250px;
+  width: 100%;
   height: auto;
-  padding: 10px;
-  .head {
-    width: 100%;
-    height: 60px;
-    // margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    background-color: #fafafa;
-    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
-    li:hover {
-      height: 58px;
-      border-bottom: 3px solid #5c82ff;
-      box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
-    }
-    li {
-      width: auto;
-      height: 60px;
-      cursor: pointer;
-      padding: 0 20px;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-    }
-    .active {
-      height: 58px !important;
-      border-bottom: 3px solid #5c82ff;
-      box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
-    }
-  }
-  .listShow {
-    padding: 20px 30px;
-    background-color: #fff;
-    font-size: 12px;
-    color: #333;
-  }
-  .listCon {
-    width: 100%;
-    height: auto;
-    background-color: #fafafa;
-  }
-  .el-pagination {
-    text-align: center;
-    background-color: #fff;
-    padding: 30px 0;
-  }
-  .newAddress {
-    width: 100%;
-    height: auto;
-    padding: 40px 0;
-    background-color: #fff;
+}
+.entranceList {
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  padding: 200px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  li {
+    width: 250px;
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
-    div:hover {
-      background-color: #5c82ff;
-      color: #fff;
-    }
-    div {
-      width: 165px;
-      height: 40px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border:1px solid #5c82ff;
-      border-radius: 5px;
-      color: #5c82ff;
-      font-size: 14px;
-    }
-  }
-  .notList {
-    width: 100%;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: column;
-    padding-top: 50px;
-    background-color: #fff;
-    i {
-      font-size: 160px;
-      color: #ddd;
-    }
-    span {
-      font-size: 14px;
-      color: #999;
-    }
-    div {
-      color: #5c82ff;
-      border: 1px solid #5c82ff;
-      font-size: 14px;
-      border-radius: 4px;
-      padding: 10px;
-      margin: 15px 0;
-    }
+    color: #fff;
+    font-size: 30px;
+    background-color: #32374a;
+    border-radius: 20px;
   }
 }
-.tac {
-  overflow: hidden;
-  width: 10%;
-  .el-col {
-    width: 100%;
+.boxDom {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  .el-input {
+    margin: 10px 0;
   }
-  .el-menu-item {
-    width: 100%;
+  span {
+    color: #343434;
+    font-size: 12px;
   }
 }
 </style>
