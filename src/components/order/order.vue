@@ -132,117 +132,29 @@
                 <div id="productPosChartsID">图表内容</div>
               </li>
             </ul>
-            <el-form-item label="收款方式">
-              <div class="receive-way-box">
-                <div class="receive-way-item active">打款至我的个人钱包</div>
-                <div class="matrix-box">
-                  <div class="receive-way-item">
-                    打款至我的Matrixport钱包
-                    <div class="triangle">续电费更方便</div>
-                  </div>
-                  <div class="maintenance-fee-tips matrix-tips" style="display: none;">
-                    <i class="font_family icon-explain tips-ico"></i>
-                    <span>为保证您的资金安全，提币时需进行KYC认证。</span>
-                  </div>
-                </div>
-              </div>
-            </el-form-item>
-            <el-form-item label="BTC收币地址">
-              <section class="address-list no-addr">
-                <p class="add-addr">
-                  <span>+ 添加新的BTC地址</span>
-                </p>
-              </section>
-            </el-form-item>
           </div>
-          <el-row class="fee-info-box contract-fee">
-            <el-col class="fee-title" :span="10">算力费</el-col>
-            <el-col :span="14">
-              $ 909
-              <!---->
-            </el-col>
-          </el-row>
-          <div class="mining-days-wrap">
-            <el-form-item label="电费缴纳天数">
-              <div class="day-container">
-                <div class="recommand-day">
-                  <div class="day">10</div>
-                  <div class="day">20</div>
-                  <div class="day">40</div>
-                  <div class="day active">60</div>
-                </div>
-                <div class="custom-day">
-                  <input min="10" max="588" placeholder="输入天数（≥10）" type="number" value>
-                </div>
-              </div>
-            </el-form-item>
-            <div class="maintenance-fee-tips common-tips">
-              <i class="icon-explain tips-ico"></i>
-              套餐中未交纳的电费剩余天数可以后续支付
-            </div>
-            <div class="autopay-electricity-bill">
-              <div class="switch-item">
-                <el-switch v-model="Oform.renewal" active-color="#13ce66"/>
-                <span class="auto-pay-title">后续电费从Matrixport钱包中自动扣除</span>
-                <span class="rule-wrap">
-                  <span class="rule-link">规则说明</span>
+          <div class="money">
+            <div class="money-section">
+              <span class="total-section">商品金额</span>
+              <div class="num-and-tip">
+                <span class="num">
+                  $
+                  <span>604.</span>
+                  20
                 </span>
               </div>
-              <!---->
             </div>
+            <el-input-number v-model="num" @change="handleChange" :min="1" :max="10" label="描述文字"></el-input-number>
           </div>
-          <el-row class="fee-info-box maintance-fee">
-            <el-col :span="10">
-              电费
-              <span style="margin-left: 12px;" class="mining-days-tips">
-                <i
-                  class="el-tooltip el-icon-info"
-                  style="font-size:14px;color:#ccc;opacity:1;"
-                  aria-describedby="el-tooltip-6103"
-                  tabindex="0"
-                ></i>
-              </span>
-            </el-col>
-            <el-col :span="14">
-              $0.00
-              <span class="cal-line">
-                <span class="price-detail">= $0.0406/T/天 × 50T × 0天</span>
-              </span>
-            </el-col>
-          </el-row>
-          <div class="electric-coupon-wrap">
-            <div>
-              <div class="coupon-section">
-                <div class="coupon-title">
-                  <span class="nouse-txt">当前无优惠券可用</span>
-                </div>
-                <div class="coupon-btn no-coupon-btn">
-                  <span class="coupon-toggle">选择</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="money-section">
-            <span class="total-section">商品金额</span>
-            <div class="num-and-tip">
-              <span class="num">
-                $
-                <span>604.</span>
-                20
-              </span>
-            </div>
-          </div>
+
           <div class="confirm-box">
             <el-button type="primary" class="confirm-btn" @click="showBuyShow = true">
               <span>确定</span>
             </el-button>
             <!-- <el-button type="primary" class="confirm-btn" disabled="disabled">
               <span>确定</span>
-            </el-button> -->
-            <el-dialog
-              :visible.sync="showBuyShow"
-              width="1100px"
-              :before-close="showBuyShow">
+            </el-button>-->
+            <el-dialog :visible.sync="showBuyShow" width="1100px" :before-close="showBuyShow">
               <div class="showBuyDom">
                 <div class="formDom">
                   <div class="topInfo">
@@ -311,7 +223,7 @@
               <!-- <span slot="footer" class="dialog-footer">
                 <el-button @click="dialogVisible = false">取 消</el-button>
                 <el-button type="primary" @click="showBuyShow = false">确 定</el-button>
-              </span> -->
+              </span>-->
             </el-dialog>
             <div>
               <el-checkbox v-model="Oform.checked">我接受</el-checkbox>
@@ -503,7 +415,6 @@
           </div>
         </div>
       </div>
-      
     </div>
   </div>
 </template>
@@ -511,6 +422,7 @@
 export default {
   data() {
     return {
+      num: 1,
       Oform: {
         currency: "1",
         models: "蚂蚁矿机S19 Pro",
@@ -557,38 +469,38 @@ export default {
       );
       chartDomNode.setOption({
         tooltip: {
-        trigger: 'item',
-        formatter: '{a} <br/>{b}: {c} ({d}%)'
-    },
-    series: [
-        {
-            name: '访问来源',
-            type: 'pie',
-            radius: ['50%', '70%'],
+          trigger: "item",
+          formatter: "{a} <br/>{b}: {c} ({d}%)"
+        },
+        series: [
+          {
+            name: "访问来源",
+            type: "pie",
+            radius: ["50%", "70%"],
             avoidLabelOverlap: false,
             label: {
-                show: false,
-                position: 'center'
+              show: false,
+              position: "center"
             },
             emphasis: {
-                label: {
-                    show: true,
-                    fontSize: '30',
-                    fontWeight: 'bold'
-                }
+              label: {
+                show: true,
+                fontSize: "30",
+                fontWeight: "bold"
+              }
             },
             labelLine: {
-                show: false
+              show: false
             },
             data: [
-                {value: 335, name: '直接访问'},
-                {value: 310, name: '邮件营销'},
-                {value: 234, name: '联盟广告'},
-                {value: 135, name: '视频广告'},
-                {value: 1548, name: '搜索引擎'}
+              { value: 335, name: "直接访问" },
+              { value: 310, name: "邮件营销" },
+              { value: 234, name: "联盟广告" },
+              { value: 135, name: "视频广告" },
+              { value: 1548, name: "搜索引擎" }
             ]
-        }
-    ]
+          }
+        ]
       });
     },
     // 产品份额
@@ -619,61 +531,59 @@ export default {
       );
       chartDomNode.setOption({
         xAxis: {
-        type: 'category',
-        boundaryGap: false
-    },
-    yAxis: {
-        type: 'value',
-        boundaryGap: [0, '30%']
-    },
-    visualMap: {
-        type: 'piecewise',
-        show: false,
-        dimension: 0,
-        seriesIndex: 0,
-        pieces: [{
-            gt: 1,
-            lt: 3,
-            color: 'rgba(0, 180, 0, 0.5)'
-        }, {
-            gt: 5,
-            lt: 7,
-            color: 'rgba(0, 180, 0, 0.5)'
-        }]
-    },
-    series: [
-        {
-            type: 'line',
+          type: "category",
+          boundaryGap: false
+        },
+        yAxis: {
+          type: "value",
+          boundaryGap: [0, "30%"]
+        },
+        visualMap: {
+          type: "piecewise",
+          show: false,
+          dimension: 0,
+          seriesIndex: 0,
+          pieces: [
+            {
+              gt: 1,
+              lt: 3,
+              color: "rgba(0, 180, 0, 0.5)"
+            },
+            {
+              gt: 5,
+              lt: 7,
+              color: "rgba(0, 180, 0, 0.5)"
+            }
+          ]
+        },
+        series: [
+          {
+            type: "line",
             smooth: 0.6,
-            symbol: 'none',
+            symbol: "none",
             lineStyle: {
-                color: 'green',
-                width: 5
+              color: "green",
+              width: 5
             },
             markLine: {
-                symbol: ['none', 'none'],
-                label: {show: false},
-                data: [
-                    {xAxis: 1},
-                    {xAxis: 3},
-                    {xAxis: 5},
-                    {xAxis: 7}
-                ]
+              symbol: ["none", "none"],
+              label: { show: false },
+              data: [{ xAxis: 1 }, { xAxis: 3 }, { xAxis: 5 }, { xAxis: 7 }]
             },
             areaStyle: {},
             data: [
-                ['2019-10-10', 200],
-                ['2019-10-11', 400],
-                ['2019-10-12', 650],
-                ['2019-10-13', 500],
-                ['2019-10-14', 250],
-                ['2019-10-15', 300],
-                ['2019-10-16', 450],
-                ['2019-10-17', 300],
-                ['2019-10-18', 100]
+              ["2019-10-10", 200],
+              ["2019-10-11", 400],
+              ["2019-10-12", 650],
+              ["2019-10-13", 500],
+              ["2019-10-14", 250],
+              ["2019-10-15", 300],
+              ["2019-10-16", 450],
+              ["2019-10-17", 300],
+              ["2019-10-18", 100]
             ]
-        }
-    ]
+          }
+        ]
       });
     },
     // 产品Pos值
@@ -683,63 +593,61 @@ export default {
       );
       chartDomNode.setOption({
         xAxis: {
-        type: 'category',
-        boundaryGap: false
-    },
-    yAxis: {
-        type: 'value',
-        boundaryGap: [0, '30%']
-    },
-    visualMap: {
-        type: 'piecewise',
-        show: false,
-        dimension: 0,
-        seriesIndex: 0,
-        pieces: [{
-            gt: 1,
-            lt: 3,
-            color: 'rgba(0, 180, 0, 0.5)'
-        }, {
-            gt: 5,
-            lt: 7,
-            color: 'rgba(0, 180, 0, 0.5)'
-        }]
-    },
-    series: [
-        {
-            type: 'line',
+          type: "category",
+          boundaryGap: false
+        },
+        yAxis: {
+          type: "value",
+          boundaryGap: [0, "30%"]
+        },
+        visualMap: {
+          type: "piecewise",
+          show: false,
+          dimension: 0,
+          seriesIndex: 0,
+          pieces: [
+            {
+              gt: 1,
+              lt: 3,
+              color: "rgba(0, 180, 0, 0.5)"
+            },
+            {
+              gt: 5,
+              lt: 7,
+              color: "rgba(0, 180, 0, 0.5)"
+            }
+          ]
+        },
+        series: [
+          {
+            type: "line",
             smooth: 0.6,
-            symbol: 'none',
+            symbol: "none",
             lineStyle: {
-                color: 'green',
-                width: 5
+              color: "green",
+              width: 5
             },
             markLine: {
-                symbol: ['none', 'none'],
-                label: {show: false},
-                data: [
-                    {xAxis: 1},
-                    {xAxis: 3},
-                    {xAxis: 5},
-                    {xAxis: 7}
-                ]
+              symbol: ["none", "none"],
+              label: { show: false },
+              data: [{ xAxis: 1 }, { xAxis: 3 }, { xAxis: 5 }, { xAxis: 7 }]
             },
             areaStyle: {},
             data: [
-                ['2019-10-10', 200],
-                ['2019-10-11', 400],
-                ['2019-10-12', 650],
-                ['2019-10-13', 500],
-                ['2019-10-14', 250],
-                ['2019-10-15', 300],
-                ['2019-10-16', 450],
-                ['2019-10-17', 300],
-                ['2019-10-18', 100]
+              ["2019-10-10", 200],
+              ["2019-10-11", 400],
+              ["2019-10-12", 650],
+              ["2019-10-13", 500],
+              ["2019-10-14", 250],
+              ["2019-10-15", 300],
+              ["2019-10-16", 450],
+              ["2019-10-17", 300],
+              ["2019-10-18", 100]
             ]
-        }
-    ]
+          }
+        ]
       });
-    },
+    }
   }
 };
 </script>
@@ -752,8 +660,8 @@ export default {
 .payment-instructions {
   width: 100%;
   height: auto;
-  background-color: #FFFFCC;
-  color: #E6A23C;
+  background-color: #ffffcc;
+  color: #e6a23c;
   font-size: 15px;
   margin: 20px 0;
   padding: 20px;
@@ -844,7 +752,7 @@ export default {
       padding: 20px 0;
       .titleInfo {
         font-size: 20px;
-        color: #F56C6C;
+        color: #f56c6c;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -856,13 +764,13 @@ export default {
       }
       .timeInfo {
         display: flex;
-          align-items: center;
-          justify-content: center;
+        align-items: center;
+        justify-content: center;
         div {
           display: flex;
           align-items: center;
           justify-content: center;
-          color: #FF3300;
+          color: #ff3300;
           span {
             width: 40px;
             height: 30px;
@@ -871,7 +779,7 @@ export default {
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #F56C6C;
+            background-color: #f56c6c;
           }
         }
       }
@@ -882,9 +790,9 @@ export default {
       border-top: 1px solid #999;
       padding: 20px 0;
       display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
-        flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-direction: column;
       label {
         font-size: 15px;
         color: #343434;
@@ -904,8 +812,8 @@ export default {
           width: 200px;
           height: 80px;
           display: flex;
-        align-items: center;
-        justify-content: center;
+          align-items: center;
+          justify-content: center;
         }
       }
     }
@@ -920,7 +828,7 @@ export default {
     .itemInfo {
       width: 100%;
       height: auto;
-      border-bottom: 1px solid #ddd; 
+      border-bottom: 1px solid #ddd;
       text-align: left;
       margin: 25px 0;
       label {
@@ -937,28 +845,28 @@ export default {
       }
     }
     .program {
-        margin-top: 20px;
-        padding: 20px;
-        width: 100%;
-        height: auto;
-        border-radius: 10px;
-        background-color: #ddd;
-        text-align: left;
-        label {
-          font-size: 15px;
-          font-weight: 700;
-          margin: 10px 0;
-        }
-        div {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          margin: 10px 0;
-          span {
-            color: #3c63e3;
-          }
+      margin-top: 20px;
+      padding: 20px;
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      background-color: #ddd;
+      text-align: left;
+      label {
+        font-size: 15px;
+        font-weight: 700;
+        margin: 10px 0;
+      }
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 10px 0;
+        span {
+          color: #3c63e3;
         }
       }
+    }
   }
 }
 
@@ -1335,18 +1243,22 @@ container .coupon-toggle i {
   display: inline-block;
   color: #fff;
 }
+.money {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .money-section {
   font-size: 24px;
-  margin: 25px 0 0 50px;
-  display: -webkit-box;
+  margin: 25px 0;
   display: flex;
-  -webkit-box-align: baseline;
-  align-items: baseline;
+  align-items: flex-start;
+  justify-content: flex-start;
   .total-section {
     display: inline-block;
     font-size: 20px;
     text-align: right;
-    width: 344px;
+    width: auto;
   }
   .num-and-tip {
     max-width: 706px;
